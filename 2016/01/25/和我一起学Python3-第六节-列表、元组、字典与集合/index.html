@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>和我一起学Python3 第六节 列表、元组、字典与集合 | 夜光糖果屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="大家好~~~~
+作者前几天到NIIT实训去了，学了“如何在博客了加入背景音乐”（雾）。
+老师说，用这个：123&amp;lt;audio src=&quot;blablablabla……&quot; controls=&quot;controls&quot; loop=&quot;loop&quot;&amp;gt;您的浏览器实在是太先进了&amp;lt;/audio&amp;gt;
+标签就可以了！
+话说……播放列表怎么做QAQ
+扯远了，我们来接着学习Python吧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="和我一起学Python3 第六节 列表、元组、字典与集合">
+<meta property="og:url" content="http://blog.moeoj.net/2016/01/25/和我一起学Python3-第六节-列表、元组、字典与集合/index.html">
+<meta property="og:site_name" content="夜光糖果屋">
+<meta property="og:description" content="大家好~~~~
+作者前几天到NIIT实训去了，学了“如何在博客了加入背景音乐”（雾）。
+老师说，用这个：123&amp;lt;audio src=&quot;blablablabla……&quot; controls=&quot;controls&quot; loop=&quot;loop&quot;&amp;gt;您的浏览器实在是太先进了&amp;lt;/audio&amp;gt;
+标签就可以了！
+话说……播放列表怎么做QAQ
+扯远了，我们来接着学习Python吧。">
+<meta property="og:updated_time" content="2016-01-29T13:51:19.715Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="和我一起学Python3 第六节 列表、元组、字典与集合">
+<meta name="twitter:description" content="大家好~~~~
+作者前几天到NIIT实训去了，学了“如何在博客了加入背景音乐”（雾）。
+老师说，用这个：123&amp;lt;audio src=&quot;blablablabla……&quot; controls=&quot;controls&quot; loop=&quot;loop&quot;&amp;gt;您的浏览器实在是太先进了&amp;lt;/audio&amp;gt;
+标签就可以了！
+话说……播放列表怎么做QAQ
+扯远了，我们来接着学习Python吧。">
+  
+    <link rel="alternative" href="/atom.xml" title="夜光糖果屋" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4148291a3816952addee05d3f480bf1a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">夜光</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ShadowPower" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ShadowPower" title="zhihu">zhihu</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/oioga" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/First-Blood/" style="font-size: 10px;">First Blood</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/厨余垃圾/" style="font-size: 10px;">厨余垃圾</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/有趣/" style="font-size: 10px;">有趣</a> <a href="/tags/牢骚/" style="font-size: 10px;">牢骚</a> <a href="/tags/脑洞/" style="font-size: 10px;">脑洞</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.blumia.net/">BLumia个人主页</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.blumia.net/">BLumia博客</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://chrisoft.org/">Chris的完美算术教室</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.sina.com.cn/u/5360504310/">jjy神犇的博客</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/blumia/">BLumia饼干屋（有干货的博客）</a>
+					  <br>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">死宅不怕开水烫(┙&gt;∧&lt;)┙へ┻┻</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">夜光</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img src="/images/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">夜光</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ShadowPower" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ShadowPower" title="zhihu">zhihu</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/oioga" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-和我一起学Python3-第六节-列表、元组、字典与集合" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/25/和我一起学Python3-第六节-列表、元组、字典与集合/" class="article-date">
+  	<time datetime="2016-01-25T03:31:50.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      和我一起学Python3 第六节 列表、元组、字典与集合
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Python3教程/">Python3教程</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>大家好~~~~</p>
+<p>作者前几天到NIIT实训去了，学了“如何在博客了加入背景音乐”（雾）。</p>
+<p>老师说，用这个：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"blablablabla……"</span> <span class="attribute">controls</span>=<span class="value">"controls"</span> <span class="attribute">loop</span>=<span class="value">"loop"</span>&gt;</span></span><br><span class="line">您的浏览器实在是太先进了</span><br><span class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>标签就可以了！</p>
+<p>话说……播放列表怎么做QAQ</p>
+<p>扯远了，我们来接着学习Python吧。</p>
+<a id="more"></a>
+<p>这节课我们来讲Python中的四种特殊的数据类型，它们的特点是：</p>
+<ul>
+<li>由0个、1个或多个基本类型的数据组成</li>
+<li>可以层层嵌套</li>
+</ul>
+<p>它们就是：<br>（标题上那四个……）</p>
+<p>我们先来学习这里面的“列表”和“元组”。</p>
+<p>Python中的“列表”、“元组”和“字符串”都是<strong>序列对象</strong>。</p>
+<p>什么叫做“序列对象”呢？</p>
+<p>序列对象就是具有下列特点的对象：</p>
+<ul>
+<li>成员<strong>有序</strong>排列</li>
+<li>可以通过下标访问</li>
+<li>可以迭代</li>
+</ul>
+<h2 id="u5143_u7EC4_28Tuple_29"><a href="#u5143_u7EC4_28Tuple_29" class="headerlink" title="元组(Tuple)"></a>元组(Tuple)</h2><p>元组是一种<strong>不可变</strong>的序列对象。</p>
+<p>一个元组的表示方式是：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&#23545;&#35937;1, &#23545;&#35937;2, &#23545;&#35937;3)</span><br></pre></td></tr></table></figure></p>
+<p>其中的“对象”可以是任何一种数据类型，包括本节所讲的所有类型。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>(<span class="number">123</span>, <span class="string">'你好'</span>, [<span class="string">'hello'</span>])</span><br><span class="line">(<span class="number">123</span>, <span class="string">'你好'</span>, [<span class="string">'hello'</span>])</span><br></pre></td></tr></table></figure></p>
+<p>这就是一个元组，其中第一个对象是一个int，第二个对象是一个string，第三个对象是一个列表(List)</p>
+<p>一个元组被创建之后就不能被修改，所有的“修改”操作只是完全重新创建了一个新的元组，然后取代了原有的元组。</p>
+<p>有时候元组可以没有括号，但括号+逗号+2个或2个以上的对象所构成的，一定是一个独立的“元组”。<br>例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="number">1</span>,<span class="number">2</span></span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>((<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="number">1</span>,(<span class="number">2</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>(<span class="number">1</span>,(<span class="number">2</span>))</span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="number">1</span>,(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">(<span class="number">1</span>, (<span class="number">2</span>, <span class="number">3</span>))</span><br></pre></td></tr></table></figure></p>
+<p>第一到第四种情况，它们都是等价的。都是同一个元组对象：(1, 2)<br>第五中情况为元组嵌套元组。</p>
+<p>元组在“给函数传递多个参数”、“一个函数同时返回多个值”等场合中都有应用。<br>这里举一个简单的例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="number">1</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = <span class="number">2</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a,b = b,a</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>这就是<strong>两数交换</strong>的写法，a, b = b, a。<br>相当于：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(a, b) = (b, a)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">temp_b = b</span><br><span class="line">temp_a = a</span><br><span class="line">a = temp_b</span><br><span class="line">b = temp_a</span><br></pre></td></tr></table></figure>
+<p>你问我[a, b] = [b, a]可不可以？<br>当然可以。</p>
+<p>a和b都是不可变对象，它们的值是不会被修改的。<br>当然，也没有创建出两个新的int。<br>这个“两数交换”其实是交换了a和b的引用，现在通过a访问到的是之前的b，通过b访问到的是之前的a。它们在内存中的实际位置没有发生变化。值也没有发生变化。</p>
+<p>你可以通过下标访问元组的任意项，语法是：有序对象[位置]。Python中的[]非常强大，我们一会再学。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>(<span class="number">1</span>,<span class="number">2</span>)[<span class="number">1</span>]</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u5217_u8868_28List_29"><a href="#u5217_u8868_28List_29" class="headerlink" title="列表(List)"></a>列表(List)</h2><p>列表和元组很相似，但有一点区别：<strong>列表的内容可以被修改</strong>。<br>创建了一个列表之后，你可以对它进行增删改查操作。<br>一个列表的表示方式是：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#23545;&#35937;1, &#23545;&#35937;2, &#23545;&#35937;3]</span><br></pre></td></tr></table></figure></p>
+<p>这是一个列表的例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="string">'2'</span>, [<span class="number">3</span>]]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="string">'2'</span>, [<span class="number">3</span>]]</span><br></pre></td></tr></table></figure></p>
+<p>其中的对象从左往右依次为int，string，list。</p>
+<p>我们可以当数组用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="number">0</span>]</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>可以当堆栈用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.append(<span class="number">4</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="string">'2'</span>, [<span class="number">3</span>], <span class="number">4</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.pop()</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="string">'2'</span>, [<span class="number">3</span>]]</span><br></pre></td></tr></table></figure></p>
+<p>可以拼接两个List：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.extend([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="string">'2'</span>, [<span class="number">3</span>], <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure></p>
+<p>当然，你可以将两个List相加，它会返回一个由两个List拼接而成的新List。由于是完全重新创建的List，所以耗时长，消耗内存大。一般不建议使用。</p>
+<p>可以当队列用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.append(<span class="string">'abc'</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="string">'2'</span>, [<span class="number">3</span>], <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="string">'abc'</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.pop(<span class="number">0</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="string">'2'</span>, [<span class="number">3</span>], <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="string">'abc'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>pop(下标)将返回并删除指定位置的元素。如果不指定参数，则目标为队列末尾。</p>
+<p>可以插队：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.insert(<span class="number">3</span>, <span class="string">'d'</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="string">'2'</span>, [<span class="number">3</span>], <span class="number">4</span>, <span class="string">'d'</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="string">'abc'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>使用insert(位置, 内容)可以在指定位置（从0到n-1）插入一个对象。</p>
+<p>可以排序：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = [<span class="number">6</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.sort()</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure></p>
+<p>如果List中有多种数据类型，依然可以对它进行排序，Python会尽可能让其按照一定的顺序排列<br>sort()函数会直接修改List的内容，不会返回数据。</p>
+<p>如果你想保留原List，请使用sorted()函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = [<span class="number">6</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = sorted(a)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">6</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure></p>
+<p>使用reverse()方法可以翻转一个List的顺序：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b.reverse()</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
+<p>可以删除List中一个指定内容的项：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = [<span class="string">'abc'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="string">'abc'</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.remove(<span class="number">4</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="string">'abc'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="string">'abc'</span>, <span class="number">5</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.remove(<span class="string">'abc'</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="string">'abc'</span>, <span class="number">5</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.remove(<span class="string">'abc'</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure></p>
+<p>是否还记得，Python中所有的变量名都是<strong>引用</strong>？（在上一节中提到过）<br>我们可以试验一下。</p>
+<p>现在有一个列表a：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure></p>
+<p>你想复制一份a，如何操作？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = a</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure></p>
+<p>看起来好像复制了一份a。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.append(<span class="number">4</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
+<p>没错，a和b只是同一个List的<strong>两个引用</strong>。或者你可以理解为“两个名称”。其实内存中只有一个List……</p>
+<p>那……怎么复制呢？</p>
+<p>当然，你可以遍历这个List，创建一个新的List，把每个项目一个一个加进去。<br>不过，Python那强大的[]运算符能更加省事。</p>
+<p>它不仅可以访问序列中的一个对象，还可以访问序列中的一组对象。</p>
+<p>如果想复制一个List，你可以这么做：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = a[:]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.append(<span class="number">5</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure></p>
+<p>这才是两个List。</p>
+<h2 id="Python__u5207_u7247"><a href="#Python__u5207_u7247" class="headerlink" title="Python 切片"></a>Python 切片</h2><p>话说a[:]是什么鬼……</p>
+<p>好的，现在讲一讲a[:]是什么鬼。</p>
+<p>Python的[]有下列三种用法：</p>
+<blockquote>
+<ul>
+<li>有序对象[位置]<br>返回一个序列指定位置的对象，这个位置取值范围为从0 ~ n-1（顺序访问），也可以从-1 ~ -n（逆序访问）</li>
+</ul>
+<ul>
+<li>有序对象[起始位置:终止位置]<br>返回一个序列中指定始末位置的片段（不包含终止位置对应的对象），若起始位置大于等于终止位置，则返回空序列。位置同样支持负数值。（注意……返回的序列顺序不会发生变化）</li>
+</ul>
+<ul>
+<li>有序对象[起始位置:终止位置:步进值]<br>在上面的基础上，加上一个“对象之间的距离”值。</li>
+</ul>
+</blockquote>
+<p>这称为“切片”。</p>
+<p>来试一试吧：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = list(range(<span class="number">1</span>,<span class="number">21</span>))</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>]</span><br></pre></td></tr></table></figure></p>
+<p>在Python 3中，range()返回一个迭代器，支持1~3个参数，1个参数返回从0 ~ n-1的迭代器，其余情况和上面的“切片”类似……区别就是步进值允许负数，返回一个倒序的数列迭代器。<br>使用list()函数将迭代器转换为List对象。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[-<span class="number">1</span>]</span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[-<span class="number">2</span>]</span><br><span class="line"><span class="number">19</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="number">5</span>]</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="number">1</span>:<span class="number">5</span>]</span><br><span class="line">[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[:<span class="number">5</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="number">14</span>]</span><br><span class="line"><span class="number">15</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="number">14</span>:-<span class="number">1</span>]</span><br><span class="line">[<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="number">14</span>:]</span><br><span class="line">[<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[:]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>]</span><br></pre></td></tr></table></figure>
+<p>是不是突然理解了a[:]……<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[::<span class="number">2</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">15</span>, <span class="number">17</span>, <span class="number">19</span>]</span><br></pre></td></tr></table></figure></p>
+<p>没错，只要冒号数量对得上，位置可以为空，表示开始位置/末尾位置。步进值也可以为空，默认为1。<br>由此可推测：<br>a[::]的效果和a[:]是一样的。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[::]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>]</span><br></pre></td></tr></table></figure></p>
+<p>所有的序列对象都可以这么玩：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s = <span class="string">'我从未见过如此厚颜无耻之人'</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s[<span class="number">3</span>:]</span><br><span class="line"><span class="string">'见过如此厚颜无耻之人'</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>s[::<span class="number">2</span>]</span><br><span class="line"><span class="string">'我未过此颜耻人'</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u5B57_u5178_28Dict_29"><a href="#u5B57_u5178_28Dict_29" class="headerlink" title="字典(Dict)"></a>字典(Dict)</h2><p>字典是用key-value方式存储的数据结构。</p>
+<p>使用这种数据结构，你可以通过key，在很短的时间内查找到value。</p>
+<p>这适合存储类似于名字-成绩，单词-含义，属性-值……这样的成对出现的数据。</p>
+<p>话不多说，直接看示范：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = &#123;<span class="string">'小明'</span>: <span class="number">100</span>, <span class="string">'小红'</span>: <span class="number">97</span>, <span class="string">'小刚'</span>: <span class="number">86</span>&#125;</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="string">'小明'</span>]</span><br><span class="line"><span class="number">100</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[<span class="string">'小埋'</span>] = <span class="number">99</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">&#123;<span class="string">'小埋'</span>: <span class="number">99</span>, <span class="string">'小红'</span>: <span class="number">97</span>, <span class="string">'小明'</span>: <span class="number">100</span>, <span class="string">'小刚'</span>: <span class="number">86</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>它的格式是：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;key1: value1, key2: value2, key3: value3&#125;</span><br></pre></td></tr></table></figure></p>
+<p>访问方式是：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字典名[key]</span><br></pre></td></tr></table></figure></p>
+<p><strong>key必须是不可变类型。</strong><br><strong>key必须是不可变类型。</strong><br><strong>key必须是不可变类型。</strong>  </p>
+<p>使用可变对象作为key会报错：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]] = <span class="number">12</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: unhashable type: <span class="string">'list'</span></span><br></pre></td></tr></table></figure></p>
+<p>（从错误信息来看，Dict的索引是基于Hash的）</p>
+<p>访问不存在的key会报错：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62;&#62; a[&#39;BL&#39;]&#10;Traceback (most recent call last):&#10;  File &#34;&#60;stdin&#62;&#34;, line 1, in &#60;module&#62;&#10;KeyError: &#39;BL&#39;</span><br></pre></td></tr></table></figure></p>
+<p>怎么避免这个错误呢？使用dict提供的get方法即可。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.get(<span class="string">'BL'</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.get(<span class="string">'BL'</span>, <span class="number">1</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.get(<span class="string">'小埋'</span>)</span><br><span class="line"><span class="number">99</span></span><br></pre></td></tr></table></figure></p>
+<p>字典.get(key)：如果key不存在，返回None。<br>字典.get(key, 返回值)：如果key不存在，返回用户指定的值。</p>
+<p>你可以检查key是否存在：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'小埋'</span> <span class="keyword">in</span> a</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'BL'</span> <span class="keyword">in</span> a</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
+<p>可以移除字典中的项目：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.pop(<span class="string">'小埋'</span>)</span><br><span class="line"><span class="number">99</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">&#123;<span class="string">'小红'</span>: <span class="number">97</span>, <span class="string">'小明'</span>: <span class="number">100</span>, <span class="string">'小刚'</span>: <span class="number">86</span>&#125;</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">del</span> a[<span class="string">'小明'</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">&#123;<span class="string">'小红'</span>: <span class="number">97</span>, <span class="string">'小刚'</span>: <span class="number">86</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：Dict内部的数据存放顺序和添加的顺序无关。</strong></p>
+<p>Dict的两个特点：</p>
+<ul>
+<li>查找速度快</li>
+<li>浪费内存多</li>
+</ul>
+<h2 id="u96C6_u5408_28set_29"><a href="#u96C6_u5408_28set_29" class="headerlink" title="集合(set)"></a>集合(set)</h2><p>和字典类似，但只有key，没有value。</p>
+<p>和数学定义的“集合”类似，集合中的元素具有确定性、互异性和无序性。（23333333）</p>
+<p>集合的使用方式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.add(<span class="number">4</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.remove(<span class="number">1</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.add(<span class="number">4</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.add(<span class="number">4</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.add(<span class="number">4</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a.add(<span class="number">4</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>和数学上的集合一样，可以求交集和并集：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b &amp; a</span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b | a</span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>和dict一样，不可在set中放入“不可变对象”。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#62;&#62;&#62; a.add([1])&#10;Traceback (most recent call last):&#10;  File &#34;&#60;stdin&#62;&#34;, line 1, in &#60;module&#62;&#10;TypeError: unhashable type: &#39;list&#39;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/30/手有点痒/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          手有点痒
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/18/今天登录Steam，遇到了SSL错误/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">今天登录Steam，遇到了SSL错误</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="和我一起学Python3-第六节-列表、元组、字典与集合" data-title="和我一起学Python3 第六节 列表、元组、字典与集合" data-url="http://blog.moeoj.net/2016/01/25/和我一起学Python3-第六节-列表、元组、字典与集合/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"oniichan"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+<script src="http://cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" type="text/javascript"></script>
+<script data-no-instant>
+InstantClick.on('change', function(isInitialLoad) {
+  if (isInitialLoad === false) {
+    if (typeof MathJax !== 'undefined') // support MathJax
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    if (typeof _hmt !== 'undefined')  // support 百度统计
+      _hmt.push(['_trackPageview', location.pathname + location.search]);
+	if($(".ds-thread").length && typeof DUOSHUO !== 'undefined'){ //support 多说评论框
+  		DUOSHUO.EmbedThread($('.ds-thread')[0]);
+  	}
+  }
+});
+InstantClick.init();
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

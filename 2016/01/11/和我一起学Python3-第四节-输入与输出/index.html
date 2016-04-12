@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>和我一起学Python3 第四节 输入与输出 | 夜光糖果屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="“上课！起立！”
+“老师好~”
+“同学们好~请坐~”
+好，今天我们来学习第一课：输入与输出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="和我一起学Python3 第四节 输入与输出">
+<meta property="og:url" content="http://blog.moeoj.net/2016/01/11/和我一起学Python3-第四节-输入与输出/index.html">
+<meta property="og:site_name" content="夜光糖果屋">
+<meta property="og:description" content="“上课！起立！”
+“老师好~”
+“同学们好~请坐~”
+好，今天我们来学习第一课：输入与输出">
+<meta property="og:image" content="http://blog.moeoj.net/images/python/4/input.png">
+<meta property="og:image" content="http://blog.moeoj.net/images/python/4/print.png">
+<meta property="og:updated_time" content="2016-01-11T10:55:26.984Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="和我一起学Python3 第四节 输入与输出">
+<meta name="twitter:description" content="“上课！起立！”
+“老师好~”
+“同学们好~请坐~”
+好，今天我们来学习第一课：输入与输出">
+  
+    <link rel="alternative" href="/atom.xml" title="夜光糖果屋" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4148291a3816952addee05d3f480bf1a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">夜光</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ShadowPower" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ShadowPower" title="zhihu">zhihu</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/oioga" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/First-Blood/" style="font-size: 10px;">First Blood</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/厨余垃圾/" style="font-size: 10px;">厨余垃圾</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/有趣/" style="font-size: 10px;">有趣</a> <a href="/tags/牢骚/" style="font-size: 10px;">牢骚</a> <a href="/tags/脑洞/" style="font-size: 10px;">脑洞</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.blumia.net/">BLumia个人主页</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.blumia.net/">BLumia博客</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://chrisoft.org/">Chris的完美算术教室</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.sina.com.cn/u/5360504310/">jjy神犇的博客</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/blumia/">BLumia饼干屋（有干货的博客）</a>
+					  <br>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">死宅不怕开水烫(┙&gt;∧&lt;)┙へ┻┻</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">夜光</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img src="/images/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">夜光</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ShadowPower" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ShadowPower" title="zhihu">zhihu</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/oioga" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-和我一起学Python3-第四节-输入与输出" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/11/和我一起学Python3-第四节-输入与输出/" class="article-date">
+  	<time datetime="2016-01-11T04:03:28.000Z" itemprop="datePublished">2016-01-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      和我一起学Python3 第四节 输入与输出
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Python3教程/">Python3教程</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>“上课！起立！”</p>
+<p>“老师好~”</p>
+<p>“同学们好~请坐~”</p>
+<p>好，今天我们来学习第一课：输入与输出</p>
+<a id="more"></a>
+<p>在开始之前，我们先讲一讲Python的两种模式：</p>
+<h2 id="u547D_u4EE4_u4EA4_u4E92_u6A21_u5F0F"><a href="#u547D_u4EE4_u4EA4_u4E92_u6A21_u5F0F" class="headerlink" title="命令交互模式"></a>命令交互模式</h2><p>在Windows下，按Win徽标键+R，输入cmd，回车，打开命令提示符。</p>
+<p>在你看到 C:\Users\你的用户名&gt; 的时候，输入 py -3 即可进入Python命令行。</p>
+<p>Python的官方解释器（也叫做CPython）使用 <em>&gt;&gt;&gt;</em> 作为交互环境的提示符。此时输入Python语句，按下回车键，将会立即执行所输入的语句。</p>
+<p>输入下面的语句，退出Python交互式命令行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit()</span><br></pre></td></tr></table></figure>
+<p>在Arch linux中，你可以直接输入 python 进入此模式。</p>
+<p>在其他的大多数Linux发行版、Mac OS X中，你可以输入 python3 进入此模式。</p>
+<p>在这个模式中，你可以很方便的检验Python语句的正确性。学习Python的时候，打开一个Python交互命令窗口会对你很有帮助。</p>
+<p><strong>听说大小写错误的话，电脑会爆掉的(～￣▽￣)～</strong></p>
+<p>本教程后面的代码，如果开头有 &gt;&gt;&gt; 则表示在命令模式中执行。</p>
+<h2 id="u811A_u672C_u6587_u4EF6_u6A21_u5F0F"><a href="#u811A_u672C_u6587_u4EF6_u6A21_u5F0F" class="headerlink" title="脚本文件模式"></a>脚本文件模式</h2><p>你可以把 Python 代码全都写在一个文件中，然后使用 Python 解释器执行它。</p>
+<h3 id="u4F7F_u7528Linux_u3001Unix_u3001Mac_OS_X"><a href="#u4F7F_u7528Linux_u3001Unix_u3001Mac_OS_X" class="headerlink" title="使用Linux、Unix、Mac OS X"></a>使用Linux、Unix、Mac OS X</h3><p>在书写Python代码之前，建议加上这两行：</p>
+<blockquote>
+<p>#!/usr/bin/env python3</p>
+<p>#conding:utf-8</p>
+</blockquote>
+<p>第一行是Unix系统的<strong>Hashbang</strong>（也叫作<strong>Shebang</strong>），表示此脚本使用 #! 后面指定的程序执行。</p>
+<p>它的格式是这样子的：</p>
+<blockquote>
+<p>#! interpreter [optional-arg]</p>
+</blockquote>
+<p>在Arch Linux中，由于默认的Python解释器为Python3，你应该去掉末尾的3。</p>
+<p>这样，当你在Linux/Unix/Mac OS X中执行这个Python脚本的时候，只需要输入：</p>
+<blockquote>
+<p>$ ./文件名.py</p>
+</blockquote>
+<p>就可以啦。（\$表示当前权限，请不要输入\$）</p>
+<p>你也可以不写，使用下面的命令来运行：</p>
+<blockquote>
+<p>$ python3 ./文件名.py</p>
+</blockquote>
+<p>第二行表示此文件使用UTF-8编码。</p>
+<p>像这样子写都是可以的：</p>
+<blockquote>
+<p># coding=编码名<br># -*- coding: 编码名 -*-<br># coding: 编码名<br><del># vim: set fileencoding=编码名 :</del></p>
+</blockquote>
+<p><strong>注意，它只能出现在第一行或者第二行。否则……嗯，你写了个注释。</strong></p>
+<h3 id="u4F7F_u7528Windows"><a href="#u4F7F_u7528Windows" class="headerlink" title="使用Windows"></a>使用Windows</h3><p>Windows系统本身没有Hashbang。</p>
+<p>不过，如果你使用Python3.3引入的 py 启动器的话，你可以这么写：</p>
+<blockquote>
+<p>#! python</p>
+</blockquote>
+<p>这表示使用Python2执行（如果你有的话）。</p>
+<blockquote>
+<p>#! python2.7</p>
+</blockquote>
+<p>这表示使用Python2.7执行。</p>
+<blockquote>
+<p>#! python2.6</p>
+</blockquote>
+<p>你一定看得懂！</p>
+<blockquote>
+<p>#! python3</p>
+</blockquote>
+<p>这会使用Python3.x的解释器执行。</p>
+<p>你也可以通过Windows文件关联，双击一个Python脚本文件，直接启动。使用的解释器版本取决于你的Windows设置。如果你安装了Python3.3以上的版本，默认的文件关联下，#!是有效果的。</p>
+<p>有效的扩展名如下：</p>
+<ul>
+<li>.py：Python脚本文件</li>
+<li>.pyw：Python窗体脚本文件，不会出现大黑框</li>
+<li>.pyc：编译成字节码的Python脚本文件</li>
+<li>.pyo：编译并优化过后的Python脚本文件</li>
+</ul>
+<p>这是一个供参考的文件头：</p>
+<blockquote>
+<p>#! python3</p>
+<p>#coding:utf-8</p>
+</blockquote>
+<h2 id="u8F93_u5165"><a href="#u8F93_u5165" class="headerlink" title="输入"></a>输入</h2><p>只有输出不好玩？好的，我们可以给程序加入一个功能，让用户可以输入数据。</p>
+<p>使用input()函数来获取用户的输入：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input(<span class="string">'提示信息'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>input()函数将会返回用户所输入的文本信息。你需要使用一个变量来存储用户输入的文本。</p>
+<p>请进入Python命令模式，输入 &gt;&gt;&gt; 后面的代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = input(<span class="string">'type something:'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>此时你会看到 type something: 的提示，随意输入一些文字，然后按下回车。</p>
+<p>然后输入下面的代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a</span><br></pre></td></tr></table></figure></p>
+<p>你将会看到刚才输入的文本。如下图：<br><img src="/images/python/4/input.png" alt="输入文本"></p>
+<h2 id="u8F93_u51FA"><a href="#u8F93_u51FA" class="headerlink" title="输出"></a>输出</h2><p>使用print()函数可以在指定设备上输出文字。</p>
+<p>在上两节课中，我们曾经写过一个 Hello World 程序：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'你好，世界'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>它会输出’你好，世界’字样，然后换行。我们可以查询print()函数的用法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>help(<span class="keyword">print</span>)</span><br></pre></td></tr></table></figure></p>
+<p>得到的信息如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(...)&#10;&#12288;&#12288;print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)&#10;&#10;&#12288;&#12288;Prints the values to a stream, or to sys.stdout by default.&#10;&#12288;&#12288;Optional keyword arguments:&#10;&#12288;&#12288;file:  a file-like object (stream); defaults to the current sys.stdout.&#10;&#12288;&#12288;sep:   string inserted between values, default a space.&#10;&#12288;&#12288;end:   string appended after the last value, default a newline.&#10;&#12288;&#12288;flush: whether to forcibly flush the stream.</span><br></pre></td></tr></table></figure></p>
+<p>我们只需要关注这些内容：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(要输出的内容, ... ,要输出的内容, sep=<span class="string">'两个内容之间的间隔符'</span>, end=<span class="string">'输出结束后输出的字符'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>如果你想输出不换行的文本，可以试试：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>print(<span class="string">'你好~'</span>, end=<span class="string">''</span>)</span><br></pre></td></tr></table></figure></p>
+<p>来，让我们来写一个完整的程序，请打开文本编辑器，写入下面的内容：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! python3</span></span><br><span class="line"><span class="comment">#conding:utf-8</span></span><br><span class="line">名字 = input(<span class="string">'请输入您的尊姓大名：'</span>)</span><br><span class="line">print(<span class="string">'爱与正义的魔法少女'</span>, 名字, <span class="string">'，闪亮登场！'</span>, sep=<span class="string">''</span>)</span><br><span class="line">input() <span class="comment"># Windows中直接双击运行时，可以用它来暂停查看结果</span></span><br></pre></td></tr></table></figure></p>
+<p>请将文件保存为<strong>UTF-8</strong>编码，文件名为<strong>hello.py</strong>，然后<strong>双击</strong>它。<br>如果你使用Linux、Unix或Mac OS X，根据刚才讲过的内容，相信你已经知道该怎么做了。</p>
+<p>运行结果如下:<br><img src="/images/python/4/print.png" alt="运行结果"><br>噗……</p>
+<hr>
+<p>好，这节课就上到这里，同学们，下课！<br>“哦~~！放学啦！放学啦！”  </p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/11/和我一起学Python3-第五节-保留字、变量和数据类型/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          和我一起学Python3 第五节 保留字、变量和数据类型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/10/和我一起学Python3-第三节-安装开发工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">和我一起学Python3 第三节 安装开发工具</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="和我一起学Python3-第四节-输入与输出" data-title="和我一起学Python3 第四节 输入与输出" data-url="http://blog.moeoj.net/2016/01/11/和我一起学Python3-第四节-输入与输出/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"oniichan"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+<script src="http://cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" type="text/javascript"></script>
+<script data-no-instant>
+InstantClick.on('change', function(isInitialLoad) {
+  if (isInitialLoad === false) {
+    if (typeof MathJax !== 'undefined') // support MathJax
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    if (typeof _hmt !== 'undefined')  // support 百度统计
+      _hmt.push(['_trackPageview', location.pathname + location.search]);
+	if($(".ds-thread").length && typeof DUOSHUO !== 'undefined'){ //support 多说评论框
+  		DUOSHUO.EmbedThread($('.ds-thread')[0]);
+  	}
+  }
+});
+InstantClick.init();
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

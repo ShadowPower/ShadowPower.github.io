@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>和我一起学Python3 第五节 保留字、变量和数据类型 | 夜光糖果屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="保留字所谓保留字，就是在一种程序设计语言中，具有特殊含义的单词。它们不能作为变量名、函数名、对象名等标识符使用。
+要想查看当前版本的Python保留字列表，请使用下面的命令：12&amp;gt;&amp;gt;&amp;gt; import keyword&amp;gt;&amp;gt;&amp;gt; keyword.kwlist">
+<meta property="og:type" content="article">
+<meta property="og:title" content="和我一起学Python3 第五节 保留字、变量和数据类型">
+<meta property="og:url" content="http://blog.moeoj.net/2016/01/11/和我一起学Python3-第五节-保留字、变量和数据类型/index.html">
+<meta property="og:site_name" content="夜光糖果屋">
+<meta property="og:description" content="保留字所谓保留字，就是在一种程序设计语言中，具有特殊含义的单词。它们不能作为变量名、函数名、对象名等标识符使用。
+要想查看当前版本的Python保留字列表，请使用下面的命令：12&amp;gt;&amp;gt;&amp;gt; import keyword&amp;gt;&amp;gt;&amp;gt; keyword.kwlist">
+<meta property="og:updated_time" content="2016-01-12T14:33:33.433Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="和我一起学Python3 第五节 保留字、变量和数据类型">
+<meta name="twitter:description" content="保留字所谓保留字，就是在一种程序设计语言中，具有特殊含义的单词。它们不能作为变量名、函数名、对象名等标识符使用。
+要想查看当前版本的Python保留字列表，请使用下面的命令：12&amp;gt;&amp;gt;&amp;gt; import keyword&amp;gt;&amp;gt;&amp;gt; keyword.kwlist">
+  
+    <link rel="alternative" href="/atom.xml" title="夜光糖果屋" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?4148291a3816952addee05d3f480bf1a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">夜光</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ShadowPower" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ShadowPower" title="zhihu">zhihu</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/oioga" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/First-Blood/" style="font-size: 10px;">First Blood</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/厨余垃圾/" style="font-size: 10px;">厨余垃圾</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/有趣/" style="font-size: 10px;">有趣</a> <a href="/tags/牢骚/" style="font-size: 10px;">牢骚</a> <a href="/tags/脑洞/" style="font-size: 10px;">脑洞</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.blumia.net/">BLumia个人主页</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.blumia.net/">BLumia博客</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://chrisoft.org/">Chris的完美算术教室</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.sina.com.cn/u/5360504310/">jjy神犇的博客</a>
+					  <br>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/blumia/">BLumia饼干屋（有干货的博客）</a>
+					  <br>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">死宅不怕开水烫(┙&gt;∧&lt;)┙へ┻┻</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">夜光</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img src="/images/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">夜光</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ShadowPower" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/ShadowPower" title="zhihu">zhihu</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/oioga" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-和我一起学Python3-第五节-保留字、变量和数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/11/和我一起学Python3-第五节-保留字、变量和数据类型/" class="article-date">
+  	<time datetime="2016-01-11T11:23:58.000Z" itemprop="datePublished">2016-01-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      和我一起学Python3 第五节 保留字、变量和数据类型
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Python3教程/">Python3教程</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="u4FDD_u7559_u5B57"><a href="#u4FDD_u7559_u5B57" class="headerlink" title="保留字"></a>保留字</h2><p>所谓保留字，就是在一种程序设计语言中，具有特殊含义的单词。<br><strong>它们不能作为变量名、函数名、对象名等标识符使用。</strong></p>
+<p>要想查看当前版本的Python保留字列表，请使用下面的命令：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> keyword</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>keyword.kwlist</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="u53D8_u91CF"><a href="#u53D8_u91CF" class="headerlink" title="变量"></a>变量</h2><p>和初中数学课本里的“变量”一样。在Python中，它不仅可以是一个实数，它还可以是一个虚数，以及任意的数据类型。</p>
+<p>声明一个变量的方法为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量名 = 值</span><br></pre></td></tr></table></figure></p>
+<p>变量名开头不能是阿拉伯数字，可以使用各国文字、英文、下划线作为开头。</p>
+<p>在Python中，所有的“变量”只是一个“引用”。你可以理解为，它是一个实际存在的数据的名称。通过这个名称，你就可以访问对应的数据。</p>
+<p>操作符 “=”（赋值） 可以使得左边的“变量名”与右边的“值”建立对应关系。</p>
+<p>下面的语句可以创建一个名为a的变量，值为1：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>这样的变量名是合法的：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">私は変数 = <span class="number">123</span></span><br><span class="line">我是变量 = <span class="number">456</span></span><br><span class="line">_123 = <span class="number">321</span></span><br></pre></td></tr></table></figure></p>
+<p>而这样的变量名是非法的：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1a = 789</span><br></pre></td></tr></table></figure></p>
+<h2 id="u6570_u636E_u7C7B_u578B"><a href="#u6570_u636E_u7C7B_u578B" class="headerlink" title="数据类型"></a>数据类型</h2><p>Python的数据类型分为两类：可变对象和不可变对象。</p>
+<p>不可变对象一旦被创建，无法更改。你可以通过运算符、函数调用来产生一个新的数据，替换掉原有的数据或者给它一个新的变量名。</p>
+<p>可变对象在创建完毕之后，可以修改它的内容。</p>
+<p>Python中的不可变对象为：</p>
+<ul>
+<li>None（空）</li>
+<li>int（整数）</li>
+<li>float（浮点数）</li>
+<li>bool（布尔）</li>
+<li>complex（复数）</li>
+<li>String（字符串）</li>
+<li>Tuple（元组）</li>
+<li>bytes（字节）</li>
+</ul>
+<p>可变对象为：</p>
+<ul>
+<li>List（列表）</li>
+<li>Dictionarie（字典）</li>
+<li>Set（集合）</li>
+</ul>
+<h3 id="None"><a href="#None" class="headerlink" title="None"></a>None</h3><p>None表示空值，它是一个特殊的值，含义就是“什么也没有”。注意，<strong>None与0不等价。</strong></p>
+<h3 id="u6570_u503C"><a href="#u6570_u503C" class="headerlink" title="数值"></a>数值</h3><h4 id="u6574_u6570"><a href="#u6574_u6570" class="headerlink" title="整数"></a>整数</h4><p>在Python 3中，整数的长度是无限的。<br>整数的例子如下：</p>
+<blockquote>
+<p>123<br>-321<br>1234567890123456789<br>0</p>
+</blockquote>
+<h4 id="u6D6E_u70B9_u6570"><a href="#u6D6E_u70B9_u6570" class="headerlink" title="浮点数"></a>浮点数</h4><p>Python中提供的浮点数为双精度(64bit)浮点数。与C语言中的double类型相同。<br>Python不支持单精度浮点数。</p>
+<p>浮点数的例子如下：</p>
+<blockquote>
+<p>123.45<br>-321.01<br>5.0<br>.9</p>
+</blockquote>
+<h4 id="u590D_u6570"><a href="#u590D_u6570" class="headerlink" title="复数"></a>复数</h4><p>复数是一对浮点数。其中一个表示实部，另一个表示虚部。<br>Python的复数由实部、+或-、虚部和j构成。<br>这是一些复数的例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>z = <span class="number">12</span>-<span class="number">2.3j</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>z = -<span class="number">1.2</span>+<span class="number">3.4j</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>z.real</span><br><span class="line">-<span class="number">1.2</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>z.imag</span><br><span class="line"><span class="number">3.4</span></span><br></pre></td></tr></table></figure></p>
+<p>不能对复数使用除法、取模和三个参数的pow()操作。（三个参数的pow是幂取模运算）。<br>复数类型有一个方法conjugate()，它可以改变虚部的符号：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>z.conjugate()</span><br><span class="line">(-<span class="number">1.2</span>-<span class="number">3.4j</span>)</span><br></pre></td></tr></table></figure></p>
+<p>该方法会返回一个新的复数，它的虚部符号和原复数相反。</p>
+<h4 id="u7CBE_u786E_u5341_u8FDB_u5236_u5C0F_u6570"><a href="#u7CBE_u786E_u5341_u8FDB_u5236_u5C0F_u6570" class="headerlink" title="精确十进制小数"></a>精确十进制小数</h4><p>虽然大部分情况下，使用浮点数导致的数值不精确问题对程序的影响不大，而且浮点数的运算速度优势足以掩盖它的缺点。不过，在某些情况下，例如涉及到金钱的计算，即使要付出时间的代价，也要确保它的完全准确性。这时候我们可以使用 Python 提供的 decimal 模块。<br>要使用它，需要先导入 decimal 模块，像这样：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="keyword">import</span> decimal</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = decimal.Decimal(<span class="number">123</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>b = decimal.Decimal(<span class="string">"4567.8901234567890123"</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a + b</span><br><span class="line">Decimal(<span class="string">'4690.8901234567890123'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>math 和 cmath 模块提供的函数不适用于处理 decimal ，但是 math 模块所提供的函数在 decimal 里存在对应的方法。比如，要计算 $e^x$ （x 是一个浮点数），可以使用 math.exp(x)。如果 x 是一个 decimal.Decimal，你需要使用 x.exp()。<br>decimal.Decimal 数据类型还提供ln()方法，用于计算自然对数（以e为底）。</p>
+<h3 id="u5E03_u5C14"><a href="#u5E03_u5C14" class="headerlink" title="布尔"></a>布尔</h3><p>布尔类型只有两个值：<strong>True</strong>和<strong>False</strong><br>布尔类型用来表述逻辑含义：真和假。<br><strong>True</strong>为真，<strong>False</strong>为假。<br>用于条件语句。</p>
+<h3 id="u5B57_u7B26_u4E32"><a href="#u5B57_u7B26_u4E32" class="headerlink" title="字符串"></a>字符串</h3><p>字符串是用单引号（’）或者双引号（”）括起来的任意文本。<br>不要使用中文单引号和双引号。只有英文单引号和英文双引号才符合Python语法。</p>
+<p>使用三个单引号括起来可以表示多行文本。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">单引号字符串 = <span class="string">'使用单引号括起来的文本'</span></span><br><span class="line">双引号字符串 = <span class="string">"使用双引号括起来的文本"</span></span><br><span class="line">包含单引号的字符串 = <span class="string">"这一段文本中包含了'单引号'"</span></span><br><span class="line">包含双引号的字符串 = <span class="string">'这一段文本中包含了"双引号"'</span></span><br><span class="line">包含转义字符的字符串 = <span class="string">'我既包含了单引号\'，又包含了双引号"'</span></span><br><span class="line">多行文本 = <span class="string">'''第一行</span><br><span class="line">第二行</span><br><span class="line">第三行</span><br><span class="line">第四行'''</span></span><br><span class="line">双引号多行文本 = <span class="string">""" 一段有换行的文字 """</span></span><br></pre></td></tr></table></figure></p>
+<p>在上述代码中，第五个字符串包含了转义符号：\<br>输入一些不能直接输入或者显示的字符，需要使用转义字符。</p>
+<p>Python 转义字符表：</p>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\newline</td>
+<td>忽略换行</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\”</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>蜂鸣</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>走纸</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\N{name}</td>
+<td>给定名称的 Unicode 字符</td>
+</tr>
+<tr>
+<td>\ooo</td>
+<td>给定八进制值的字符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>\uhhhh</td>
+<td>给定16位十六进制值的 Unicode 字符</td>
+</tr>
+<tr>
+<td>\Uhhhhhhhh</td>
+<td>给定32位十六进制值的 Unicode 字符</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表符</td>
+</tr>
+<tr>
+<td>\xhh</td>
+<td>给定8位十六进制值的 Unicode 字符</td>
+</tr>
+</tbody>
+</table>
+<p>如果不想使用转义符号，你可以使用r前缀：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>text = <span class="string">r'末尾的换行是没有用的\n'</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>print(text)</span><br><span class="line">末尾的换行是没有用的\n</span><br></pre></td></tr></table></figure></p>
+<p>由于Python3的字符串在内存中以Unicode表示，一个字符对应N个字节，如果你想在网络上传输或者写入文件，需要转为bytes类型。<br>使用前缀b来创建bytes类型的数据：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>a = <span class="string">b'Hello'</span></span><br></pre></td></tr></table></figure></p>
+<p>bytes的每一个字符只能占用一个字节。</p>
+<p>通过使用encode()方法，可以将字符串编码为指定编码的bytes，像这样：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'Hello'</span>.encode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="string">b'Hello'</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'你好'</span>.encode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="string">b'\xe4\xbd\xa0\xe5\xa5\xbd'</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'你好'</span>.encode(<span class="string">'ascii'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>最后一行会报错：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):&#10;  File &#34;&#60;stdin&#62;&#34;, line 1, in &#60;module&#62;&#10;UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 0-1: ordinal not in range(128)</span><br></pre></td></tr></table></figure></p>
+<h3 id="u57FA_u672C_u7C7B_u578B_u76F8_u4E92_u8F6C_u6362"><a href="#u57FA_u672C_u7C7B_u578B_u76F8_u4E92_u8F6C_u6362" class="headerlink" title="基本类型相互转换"></a>基本类型相互转换</h3><p>下面这些函数用于转换数据类型（括号为参数，[]内的是可选参数）：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chr(a)</td>
+<td>返回ASCII码对应的字符串</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>返回一个字符的Unicode值</td>
+</tr>
+<tr>
+<td>complex(real[,imaginary])</td>
+<td>将字符串或数字转为复数</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>将数字或字符串转换为浮点数</td>
+</tr>
+<tr>
+<td>int(x[,base])</td>
+<td>将数字或字符串转换为一个整数，base为基数（进制）</td>
+</tr>
+<tr>
+<td>hex(x)</td>
+<td>将整数转换为十六进制数（字符串形式）</td>
+</tr>
+<tr>
+<td>oct(x)</td>
+<td>将整数转换为八进制数（字符串形式）</td>
+</tr>
+<tr>
+<td>str(object)</td>
+<td>把一个对象转换为字符串</td>
+</tr>
+<tr>
+<td>list(x)</td>
+<td>将序列对象转换为列表</td>
+</tr>
+<tr>
+<td>tuple(x)</td>
+<td>把序列对象转换为元组（Tuple）</td>
+</tr>
+<tr>
+<td>type(x)</td>
+<td>返回对象的数据类型</td>
+</tr>
+</tbody>
+</table>
+<p>这是一些示例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>int(<span class="string">"123"</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>str(<span class="number">1</span>) + str(<span class="number">1</span>)</span><br><span class="line"><span class="string">'11'</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>chr(<span class="number">61</span>)</span><br><span class="line"><span class="string">'='</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>ord(<span class="string">'A'</span>)</span><br><span class="line"><span class="number">65</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>float(<span class="number">23</span>)</span><br><span class="line"><span class="number">23.0</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>complex(<span class="number">12</span>,<span class="number">3.4</span>)</span><br><span class="line">(<span class="number">12</span>+<span class="number">3.4j</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>list((<span class="number">12</span>,<span class="number">34</span>,<span class="number">56</span>)) <span class="comment">#参数是tuple</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">34</span>, <span class="number">56</span>]</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>tuple([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]) <span class="comment">#参数是list</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/18/今天登录Steam，遇到了SSL错误/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          今天登录Steam，遇到了SSL错误
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/11/和我一起学Python3-第四节-输入与输出/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">和我一起学Python3 第四节 输入与输出</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="和我一起学Python3-第五节-保留字、变量和数据类型" data-title="和我一起学Python3 第五节 保留字、变量和数据类型" data-url="http://blog.moeoj.net/2016/01/11/和我一起学Python3-第五节-保留字、变量和数据类型/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"oniichan"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+<script src="http://cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" type="text/javascript"></script>
+<script data-no-instant>
+InstantClick.on('change', function(isInitialLoad) {
+  if (isInitialLoad === false) {
+    if (typeof MathJax !== 'undefined') // support MathJax
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    if (typeof _hmt !== 'undefined')  // support 百度统计
+      _hmt.push(['_trackPageview', location.pathname + location.search]);
+	if($(".ds-thread").length && typeof DUOSHUO !== 'undefined'){ //support 多说评论框
+  		DUOSHUO.EmbedThread($('.ds-thread')[0]);
+  	}
+  }
+});
+InstantClick.init();
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
