@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.moeoj.net/"/>
-  <updated>2016-07-31T13:24:20.458Z</updated>
+  <updated>2016-07-31T14:04:26.835Z</updated>
   <id>http://blog.moeoj.net/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Linux下运行Steam时，提示“加载steamui.so失败”的解决方法</title>
+    <link href="http://blog.moeoj.net/2016/07/31/%E5%9C%A8Linux%E4%B8%8B%E8%BF%90%E8%A1%8CSteam%E6%97%B6%EF%BC%8C%E6%8F%90%E7%A4%BA%E2%80%9C%E5%8A%A0%E8%BD%BDsteamui-so%E5%A4%B1%E8%B4%A5%E2%80%9D%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://blog.moeoj.net/2016/07/31/在Linux下运行Steam时，提示“加载steamui-so失败”的解决方法/</id>
+    <published>2016-07-31T13:28:47.000Z</published>
+    <updated>2016-07-31T14:04:26.835Z</updated>
+    
+    <content type="html">&lt;p&gt;昨天装好了Arch Linux，KDE装了，常用软件也装上了。然而最后装上的Fcitx输入法就跟核弹引爆程序一样，只要一打字就会发生爆炸。试着装上各种模块组件+改各种设置……无解。于是我就删掉了Arch改装Ubuntu。&lt;/p&gt;
+&lt;p&gt;装好Ubuntu之后顺手装上了核弹（NVIDIA显卡）驱动程序和Steam。安装过程非常顺利。装好之后，点一下Steam的图标，发现无法运行，提示“Fatal Error: Failed to load steamui.so”。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steam-ui/fatal-error.png&quot; alt=&quot;Steam无法启动&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Σ(｀д′*ノ)ノ &lt;/p&gt;
+&lt;p&gt;╮(￣▽￣”)╭&lt;/p&gt;
+&lt;p&gt;看我如何解决它。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;首先我需要看到更多的信息：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steam-ui/debug-mode.png&quot; alt=&quot;启动DEBUG模式&quot;&gt;&lt;/p&gt;
+&lt;p&gt;运行steam，观察输出：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steam-ui/trying-libgl.png&quot; alt=&quot;错误信息&quot;&gt;&lt;/p&gt;
+&lt;p&gt;后面输出的内容意思是：&lt;/p&gt;
+&lt;p&gt;steamui.so：libGL.so.1，你在哪里~？&lt;br&gt;steamui.so：啊这里没有&lt;br&gt;steamui.so：这里也没有&lt;br&gt;steamui.so：这里还是没有&lt;br&gt;steamui.so：没有libGL.so.1我要死啦！！！&lt;br&gt;steamui.so：啊死掉了&lt;br&gt;Steam：steamui.so你在干啥？&lt;br&gt;steamui.so：我死掉了，要libGL.so.1才能活过来&lt;br&gt;Steam：……  &lt;/p&gt;
+&lt;p&gt;所以我们要帮 &lt;strong&gt;steamui.so&lt;/strong&gt; 找 &lt;strong&gt;libGL.so.1&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steam-ui/find.png&quot; alt=&quot;查找libGL&quot;&gt;&lt;/p&gt;
+&lt;p&gt;找到了四个，两个32位，两个64位，两个是mesa的，两个是核弹的……&lt;/p&gt;
+&lt;p&gt;嗯，Steam是32位的。&lt;/p&gt;
+&lt;p&gt;我们来给 &lt;strong&gt;steamui.so&lt;/strong&gt; 指引前进的道路：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steam-ui/test.png&quot; alt=&quot;运行测试&quot;&gt;&lt;/p&gt;
+&lt;p&gt;然后运行steam试试：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steam-ui/running.png&quot; alt=&quot;成功运行Steam&quot;&gt;&lt;/p&gt;
+&lt;p&gt;出现了！！！！&lt;/p&gt;
+&lt;p&gt;来试试游戏能不能玩：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steam-ui/low-fps.png&quot; alt=&quot;FPS过低提示&quot;&gt;&lt;/p&gt;
+&lt;p&gt;（明明都有60FPS好么！！！）&lt;/p&gt;
+&lt;p&gt;然后可以写一个启动脚本了，完整版是这样的：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;shebang&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; LD_LIBRARY_PATH=/usr/lib32:/usr/lib/i386-linux-gnu/mesa:&lt;span class=&quot;variable&quot;&gt;$LD_LIBRARY_PATH&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/usr/bin/steam $*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;用终端运行此Shell脚本，Steam正常启动。&lt;/p&gt;
+&lt;p&gt;最后再写一个.desktop文件就可以双击图标直接启动啦~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天装好了Arch Linux，KDE装了，常用软件也装上了。然而最后装上的Fcitx输入法就跟核弹引爆程序一样，只要一打字就会发生爆炸。试着装上各种模块组件+改各种设置……无解。于是我就删掉了Arch改装Ubuntu。&lt;/p&gt;
+&lt;p&gt;装好Ubuntu之后顺手装上了核弹（NVIDIA显卡）驱动程序和Steam。安装过程非常顺利。装好之后，点一下Steam的图标，发现无法运行，提示“Fatal Error: Failed to load steamui.so”。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/steam-ui/fatal-error.png&quot; alt=&quot;Steam无法启动&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Σ(｀д′*ノ)ノ &lt;/p&gt;
+&lt;p&gt;╮(￣▽￣”)╭&lt;/p&gt;
+&lt;p&gt;看我如何解决它。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="爬坑教程" scheme="http://blog.moeoj.net/categories/%E7%88%AC%E5%9D%91%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.moeoj.net/tags/Linux/"/>
+    
+      <category term="Steam" scheme="http://blog.moeoj.net/tags/Steam/"/>
+    
+  </entry>
   
   <entry>
     <title>设置apm镜像，解决Atom插件下载慢的问题</title>
