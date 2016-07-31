@@ -123,7 +123,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/First-Blood/" style="font-size: 10px;">First Blood</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/厨余垃圾/" style="font-size: 10px;">厨余垃圾</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/易语言/" style="font-size: 10px;">易语言</a> <a href="/tags/有趣/" style="font-size: 10px;">有趣</a> <a href="/tags/牢骚/" style="font-size: 10px;">牢骚</a> <a href="/tags/破解/" style="font-size: 10px;">破解</a> <a href="/tags/脑洞/" style="font-size: 10px;">脑洞</a>
+						<a href="/tags/Atom/" style="font-size: 10px;">Atom</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/First-Blood/" style="font-size: 10px;">First Blood</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/厨余垃圾/" style="font-size: 10px;">厨余垃圾</a> <a href="/tags/教程/" style="font-size: 20px;">教程</a> <a href="/tags/易语言/" style="font-size: 10px;">易语言</a> <a href="/tags/有趣/" style="font-size: 10px;">有趣</a> <a href="/tags/牢骚/" style="font-size: 10px;">牢骚</a> <a href="/tags/破解/" style="font-size: 10px;">破解</a> <a href="/tags/脑洞/" style="font-size: 10px;">脑洞</a>
 					</div>
 				</section>
 				
@@ -207,6 +207,77 @@ var _hmt = _hmt || [];
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-设置apm镜像，解决Atom插件下载慢的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/31/设置apm镜像，解决Atom插件下载慢的问题/" class="article-date">
+  	<time datetime="2016-07-31T12:59:52.000Z" itemprop="datePublished">2016-07-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/31/设置apm镜像，解决Atom插件下载慢的问题/">&#39;设置apm镜像，解决Atom插件下载慢的问题&#39;</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于某些原因，在国内安装Atom插件速度非常缓慢。实际上Atom使用的插件管理器apm和npm是一样的东西，可以通过指定npm镜像来加快Atom插件安装速度，提升Atom插件安装成功率。</p>
+<p>然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。</p>
+<h2 id="u8981_u600E_u4E48_u505A_u5462_uFF1F"><a href="#u8981_u600E_u4E48_u505A_u5462_uFF1F" class="headerlink" title="要怎么做呢？"></a>要怎么做呢？</h2><p>首先，Atom的配置文件保存在 <strong>用户目录/.atom</strong> 文件夹中。Windows中的用户目录默认为 <strong>C:\User\用户名</strong> ，Linux/Mac则为 <strong>/home/用户名</strong> 。在npm里，我们可以通过编辑 <strong>.npmrc</strong> 文件来配置npm。同样，我们也可以编辑 <strong>.apmrc</strong> 文件来配置apm。我们只需要一项配置：</p>
+<blockquote>
+<p>registry = <a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a> </p>
+</blockquote>
+<p>将这一行保存为 <strong>.apmrc</strong> 文件，放在 <strong>用户目录/.atom</strong> 目录中，我们就可以通过淘宝npm镜像来安装Atom插件了。为了获得加速效果，我们需要通过 <strong>apm install 插件名</strong> 这条命令来安装。当然，你可以用Python之类的语言编写一个插件批量安装脚本。</p>
+<h2 id="u7528_u547D_u4EE4_u64CD_u4F5C_u66F4_u9AD8_u6548"><a href="#u7528_u547D_u4EE4_u64CD_u4F5C_u66F4_u9AD8_u6548" class="headerlink" title="用命令操作更高效"></a>用命令操作更高效</h2><p>只需要复制下面的命令到命令行/终端中执行，即可快速完成设置：</p>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'registry = https://registry.npm.taobao.org'</span> &gt; %UserProfile%\.atom\.apmrc</span><br></pre></td></tr></table></figure>
+<h3 id="Linux/Mac_OS_X"><a href="#Linux/Mac_OS_X" class="headerlink" title="Linux/Mac OS X"></a>Linux/Mac OS X</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'registry = https://registry.npm.taobao.org'</span> &gt; ~/.atom/.apmrc</span><br></pre></td></tr></table></figure>
+<p>赶快试试看吧！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/">Atom</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/爬坑教程/">爬坑教程</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-超入门级的软件破解实例" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -780,70 +851,6 @@ function d() {
       
         <p class="article-more-link">
           <a  href="/2016/01/11/和我一起学Python3-第四节-输入与输出/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-和我一起学Python3-第三节-安装开发工具" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/10/和我一起学Python3-第三节-安装开发工具/" class="article-date">
-  	<time datetime="2016-01-10T12:05:21.000Z" itemprop="datePublished">2016-01-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/和我一起学Python3-第三节-安装开发工具/">和我一起学Python3 第三节 安装开发工具</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在安装了Python运行环境之后，我们还需要安装编写Python代码的工具。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Python3教程/">Python3教程</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/10/和我一起学Python3-第三节-安装开发工具/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
