@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.moeoj.net/"/>
-  <updated>2016-07-31T13:23:06.148Z</updated>
+  <updated>2016-07-31T13:24:20.458Z</updated>
   <id>http://blog.moeoj.net/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://blog.moeoj.net/2016/07/31/%E8%AE%BE%E7%BD%AEapm%E9%95%9C%E5%83%8F%EF%BC%8C%E8%A7%A3%E5%86%B3Atom%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://blog.moeoj.net/2016/07/31/设置apm镜像，解决Atom插件下载慢的问题/</id>
     <published>2016-07-31T12:59:52.000Z</published>
-    <updated>2016-07-31T13:23:06.148Z</updated>
+    <updated>2016-07-31T13:24:20.458Z</updated>
     
     <content type="html">&lt;p&gt;由于某些原因，在国内安装Atom插件速度非常缓慢。实际上Atom使用的插件管理器apm和npm是一样的东西，可以通过指定npm镜像来加快Atom插件安装速度，提升Atom插件安装成功率。&lt;/p&gt;
-&lt;p&gt;然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。&lt;/p&gt;
+&lt;p&gt;然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;u8981_u600E_u4E48_u505A_u5462_uFF1F&quot;&gt;&lt;a href=&quot;#u8981_u600E_u4E48_u505A_u5462_uFF1F&quot; class=&quot;headerlink&quot; title=&quot;要怎么做呢？&quot;&gt;&lt;/a&gt;要怎么做呢？&lt;/h2&gt;&lt;p&gt;首先，Atom的配置文件保存在 &lt;strong&gt;用户目录/.atom&lt;/strong&gt; 文件夹中。Windows中的用户目录默认为 &lt;strong&gt;C:\User\用户名&lt;/strong&gt; ，Linux/Mac则为 &lt;strong&gt;/home/用户名&lt;/strong&gt; 。在npm里，我们可以通过编辑 &lt;strong&gt;.npmrc&lt;/strong&gt; 文件来配置npm。同样，我们也可以编辑 &lt;strong&gt;.apmrc&lt;/strong&gt; 文件来配置apm。我们只需要一项配置：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;registry = &lt;a href=&quot;https://registry.npm.taobao.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://registry.npm.taobao.org&lt;/a&gt; &lt;/p&gt;
@@ -38,7 +38,7 @@
     <summary type="html">
     
       &lt;p&gt;由于某些原因，在国内安装Atom插件速度非常缓慢。实际上Atom使用的插件管理器apm和npm是一样的东西，可以通过指定npm镜像来加快Atom插件安装速度，提升Atom插件安装成功率。&lt;/p&gt;
-&lt;p&gt;然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，
+&lt;p&gt;然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。&lt;br&gt;
     
     </summary>
     

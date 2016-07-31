@@ -7,21 +7,18 @@
   <title>设置apm镜像，解决Atom插件下载慢的问题 | 夜光糖果屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="由于某些原因，在国内安装Atom插件速度非常缓慢。实际上Atom使用的插件管理器apm和npm是一样的东西，可以通过指定npm镜像来加快Atom插件安装速度，提升Atom插件安装成功率。
-然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。
-要怎么做呢？首先，Atom的配置文件保存在 用户目录/.atom 文件夹中。Windows中的用">
+然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设置apm镜像，解决Atom插件下载慢的问题">
 <meta property="og:url" content="http://blog.moeoj.net/2016/07/31/设置apm镜像，解决Atom插件下载慢的问题/index.html">
 <meta property="og:site_name" content="夜光糖果屋">
 <meta property="og:description" content="由于某些原因，在国内安装Atom插件速度非常缓慢。实际上Atom使用的插件管理器apm和npm是一样的东西，可以通过指定npm镜像来加快Atom插件安装速度，提升Atom插件安装成功率。
-然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。
-要怎么做呢？首先，Atom的配置文件保存在 用户目录/.atom 文件夹中。Windows中的用">
-<meta property="og:updated_time" content="2016-07-31T13:23:06.148Z">
+然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。">
+<meta property="og:updated_time" content="2016-07-31T13:24:20.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设置apm镜像，解决Atom插件下载慢的问题">
 <meta name="twitter:description" content="由于某些原因，在国内安装Atom插件速度非常缓慢。实际上Atom使用的插件管理器apm和npm是一样的东西，可以通过指定npm镜像来加快Atom插件安装速度，提升Atom插件安装成功率。
-然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。
-要怎么做呢？首先，Atom的配置文件保存在 用户目录/.atom 文件夹中。Windows中的用">
+然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。">
   
     <link rel="alternative" href="/atom.xml" title="夜光糖果屋" type="application/atom+xml">
   
@@ -255,7 +252,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>由于某些原因，在国内安装Atom插件速度非常缓慢。实际上Atom使用的插件管理器apm和npm是一样的东西，可以通过指定npm镜像来加快Atom插件安装速度，提升Atom插件安装成功率。</p>
-<p>然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。</p>
+<p>然而我在网上搜了一下，发现没有相关的教程来教你如何设置apm镜像。于是，我决定写下本篇教程，为大家节省宝贵的时间。<br><a id="more"></a></p>
 <h2 id="u8981_u600E_u4E48_u505A_u5462_uFF1F"><a href="#u8981_u600E_u4E48_u505A_u5462_uFF1F" class="headerlink" title="要怎么做呢？"></a>要怎么做呢？</h2><p>首先，Atom的配置文件保存在 <strong>用户目录/.atom</strong> 文件夹中。Windows中的用户目录默认为 <strong>C:\User\用户名</strong> ，Linux/Mac则为 <strong>/home/用户名</strong> 。在npm里，我们可以通过编辑 <strong>.npmrc</strong> 文件来配置npm。同样，我们也可以编辑 <strong>.apmrc</strong> 文件来配置apm。我们只需要一项配置：</p>
 <blockquote>
 <p>registry = <a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a> </p>
